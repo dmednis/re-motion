@@ -1,0 +1,43 @@
+.userPairs {
+  display: flex;
+  justify-content: space-evenly;
+  flex-flow: wrap;
+  margin: 30px;
+
+  a {
+    background-color: #394b59;
+    margin: 10px;
+    border-radius: 20px;
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    li {
+      border-radius: 20px;
+      list-style: none;
+    }
+  }
+}
+
+.Plot {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 25px;
+  align-items: center;
+
+  .EmoChart {
+    width: 80%;
+  }
+
+  .EmoFilter {
+
+  }
+}
+
+.backIcon {
+  position: absolute;
+  left: 20px;
+  cursor: pointer;
+}

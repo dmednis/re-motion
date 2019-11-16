@@ -3,7 +3,7 @@
 }
 
 body {
-  background: #A5FFD6;
+  background: #ffffff;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -18,7 +18,6 @@ code {
 
 
 .App {
-    height: 100vh;
     text-align: center;
     display: flex;
 }

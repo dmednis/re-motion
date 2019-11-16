@@ -2,7 +2,11 @@ import React, { useState } from 'react';
 
 import EmoFilter from "./EmoFilter";
 import EmoChart from "./EmoChart";
+import {Icon} from "@blueprintjs/core";
 
+import './Home.scss';
+
+import {history} from "../App";
 
 function Plot({ pairId }) {
   const [emotionsMother, setEmotionsMother] = useState([]);
@@ -10,6 +14,7 @@ function Plot({ pairId }) {
 
   return (
     <div className="Plot">
+      <Icon className="backIcon" icon="chevron-left" onClick={()=> {history.goBack()}}/>
       <EmoChart pairId={pairId} keys1={emotionsMother} keys2={emotionsSon}/>
 
       <EmoFilter title={"Mother"}

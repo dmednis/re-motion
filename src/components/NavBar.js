@@ -10,12 +10,11 @@ const NavBar = () => {
     <Navbar className='bp3-dark'>
       <Navbar.Group align='left'>
         <Link to="/">
-          <Navbar.Heading style={{display: 'flex'}}>
+          <Navbar.Heading style={{display: 'flex', alignItems: 'center'}}>
             <img src={smallLogo} style={{width: '30px'}}/>
-            <img src={textLogo} style={{width: '120px', height: '20px'}}/>
+            <img src={textLogo} style={{width: '120px', height: '20px', marginLeft: '5px'}}/>
           </Navbar.Heading>
         </Link>
-        <Navbar.Divider/>
       </Navbar.Group>
     </Navbar>
   );

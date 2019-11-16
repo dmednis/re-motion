@@ -25,14 +25,12 @@ class App extends React.Component {
             {/*<div className="Sidepanz">*/}
             {/*  <Sidebar/>*/}
             {/*</div>*/}
-            <div className="Jumbotronz">
               <Switch>
                 <Route exact path="/">
                   <Home/>
                 </Route>
                 <Route path="/users/:id" render={({ match }) => <Plot pairId={match.params.id} exact/>}/>
               </Switch>
-            </div>
           </div>
         </div>
       </Router>

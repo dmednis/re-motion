@@ -1,22 +1,32 @@
+.Root {
+}
 .App {
+  height: 100vh;
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  /*display: inline;*/
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  flex-direction: row;
+}
+
+.Sidepanz {
+  width: 20%;
+  border-right: 1px solid slategray;
+  height: 100vh;
+  overflow-y: scroll;
+}
+.ElementList {
+  padding: 0;
+  list-style: none;
+  margin: 0;
+}
+
+.Element {
+  text-decoration: none;
+  border: 1px solid darkgrey;
+  padding: 20px;
   color: white;
 }
 
-.App-link {
-  color: #09d3ac;
+.Element:hover {
+  box-shadow: 0 0 0 1px rgba(16,22,26,.2), 0 2px 4px rgba(16,22,26,.4), 0 8px 24px rgba(16,22,26,.4);
 }

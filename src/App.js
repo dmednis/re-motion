@@ -1,9 +1,8 @@
 import React from 'react';
 import './reset.scss';
 import './App.css';
-import Plot from "./components/Plot";
+import EmoAnalytics from "./components/EmoAnalytics";
 import NavBar from "./components/NavBar";
-import Sidebar from "./components/Sidebar";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./components/Home";
 import { createBrowserHistory } from 'history';
@@ -25,14 +24,14 @@ class App extends React.Component {
             {/*<div className="Sidepanz">*/}
             {/*  <Sidebar/>*/}
             {/*</div>*/}
-            <div className="Jumbotronz">
-              <Switch>
-                <Route exact path="/">
-                  <Home/>
-                </Route>
-                <Route path="/users/:id" render={({ match }) => <Plot pairId={match.params.id} exact/>}/>
-              </Switch>
-            </div>
+
+            <Switch>
+              <Route exact path="/">
+                <Home/>
+              </Route>
+              <Route path="/users/:id" render={({ match }) => <EmoAnalytics pairId={match.params.id} exact/>}/>
+            </Switch>
+
           </div>
         </div>
       </Router>

@@ -1,23 +1,21 @@
 import * as React from 'react';
-import {Button, Navbar} from "@blueprintjs/core";
 import smallLogo from '../images/remotion-small.png';
 import textLogo from '../images/remotion-text.png';
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
+
+import './NavBar.scss';
 
 const NavBar = () => {
 
   return (
-    <Navbar className='bp3-dark'>
-      <Navbar.Group align='left'>
-        <Link to="/">
-          <Navbar.Heading style={{display: 'flex'}}>
-            <img src={smallLogo} style={{width: '30px'}}/>
-            <img src={textLogo} style={{width: '120px', height: '20px'}}/>
-          </Navbar.Heading>
-        </Link>
-        <Navbar.Divider/>
-      </Navbar.Group>
-    </Navbar>
+    <div className="NavBar">
+      <Link to="/">
+        <div className="NavBar__logo">
+          <img src={smallLogo} style={{ width: '30px' }}/>
+          <img src={textLogo} style={{ width: '120px', height: '20px' }}/>
+        </div>
+      </Link>
+    </div>
   );
 };
 

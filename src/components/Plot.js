@@ -1,27 +1,26 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
 import EmoFilter from "./EmoFilter";
 import EmoChart from "./EmoChart";
 
 
-function Plot() {
+function Plot({ pairId }) {
+  const [emotionsMother, setEmotionsMother] = useState([]);
+  const [emotionsSon, setEmotionsSon] = useState([]);
 
-    const [emotionsMother, setEmotionsMother] = useState([]);
-    const [emotionsSon, setEmotionsSon] = useState([]);
+  return (
+    <div className="Plot">
+      <EmoChart pairId={pairId} keys1={emotionsMother} keys2={emotionsSon}/>
 
-    return (
-        <div className="Plot">
-            <EmoChart/>
+      <EmoFilter title={"Mother"}
+                 selectedEmotions={emotionsMother}
+                 onClick={(emotions) => setEmotionsMother(emotions)}/>
+      <EmoFilter title={"Son"}
+                 selectedEmotions={emotionsSon}
+                 onClick={(emotions) => setEmotionsSon(emotions)}/>
 
-            <EmoFilter title={"Mother"}
-                       selectedEmotions={emotionsMother}
-                       onClick={(emotions) => setEmotionsMother(emotions)}/>
-            <EmoFilter title={"Son"}
-                       selectedEmotions={emotionsSon}
-                       onClick={(emotions) => setEmotionsSon(emotions)}/>
-
-        </div>
-    );
+    </div>
+  );
 }
 
 export default Plot;

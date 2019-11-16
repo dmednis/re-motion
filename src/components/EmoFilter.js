@@ -19,7 +19,10 @@ function EmoFilter({title, selectedEmotions, onClick}) {
         });
 
         return (
-            <div className={classes} onClick={() => onClick(toggleEmotion(selectedEmotions, emo))}>
+            <div className={classes}
+                 onClick={() => onClick(toggleEmotion(selectedEmotions, emo))}
+                 key={emo}
+            >
                 {icon}
             </div>
         )

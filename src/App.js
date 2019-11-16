@@ -1,30 +1,39 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './reset.scss';
 import './App.css';
+import Plot from "./components/Plot";
+import NavBar from "./components/NavBar";
+import Sidebar from "./components/Sidebar";
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import Home from "./components/Home";
+import { createBrowserHistory } from 'history';
 
-import EmoFilter from "./components/EmoFilter";
-import EmoChart from "./components/EmoChart";
+export const history = createBrowserHistory();
 
-
-
-function App() {
-
-    const [emotionsMother, setEmotionsMother] = useState([]);
-    const [emotionsSon, setEmotionsSon] = useState([]);
-
+class App extends React.Component {
+  // {/*<div className='Root'>*/}
+  render() {
     return (
-        <div className="App">
-            <EmoChart/>
-
-            <EmoFilter title={"Mother"}
-                       selectedEmotions={emotionsMother}
-                       onClick={(emotions) => setEmotionsMother(emotions)}/>
-            <EmoFilter title={"Son"}
-                       selectedEmotions={emotionsSon}
-                       onClick={(emotions) => setEmotionsSon(emotions)}/>
-
+      <Router history={history}>
+        <div className='Root'>
+          <NavBar/>
+          <div className="App">
+            {/*<div className="Sidepanz">*/}
+            {/*  <Sidebar/>*/}
+            {/*</div>*/}
+            <div className="Jumbotronz">
+              <Switch>
+                <Route exact path="/">
+                  <Home />
+                </Route>
+                <Route path="/users/:id" component={Plot} exact/>
+              </Switch>
+            </div>
+          </div>
         </div>
+      </Router>
     );
+  }
 }
 
 export default App;

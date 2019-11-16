@@ -15,22 +15,20 @@ code {
     monospace;
 }
 
+#root {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
 
 .App {
-    height: 100vh;
     text-align: center;
     display: flex;
+    flex-grow: 1;
 }
 
 .App-logo {
     height: 40vmin;
-}
-
-.App-header {
-    background-color: #4ECDC4;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: row;
 }
 
 .Sidepanz {

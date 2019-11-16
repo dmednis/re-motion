@@ -1,0 +1,28 @@
+.userPairs {
+  display: flex;
+  justify-content: space-evenly;
+  flex-flow: wrap;
+  margin: 30px;
+
+  a {
+    background-color: #4ECDC4;
+    margin: 10px;
+    border-radius: 20px;
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    li {
+      border-radius: 20px;
+      list-style: none;
+    }
+  }
+}
+
+.backIcon {
+  position: absolute;
+  left: 20px;
+  cursor: pointer;
+  top: 15px;
+}

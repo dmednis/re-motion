@@ -2,10 +2,12 @@ import React from 'react';
 import * as firebase from 'firebase/app';
 import 'firebase/firestore';
 
+import {history} from "../App";
 import Plot from "./Plot";
 import emotions from '../emotions';
 import mock from '../data.js'
 import './EmoAnalytics.scss'
+import { Icon } from "@blueprintjs/core";
 
 class EmoAnalytics extends React.Component {
 
@@ -91,6 +93,7 @@ class EmoAnalytics extends React.Component {
 
     return (
       <div className="EmoAnalytics">
+        <Icon className="backIcon" icon="chevron-left" onClick={()=> {history.goBack()}}/>
         <Plot title={"Child emotions"} data1={user1} label1={"Parent"} data2={user2} label2={"Child"}/>
         <Plot title={"Parent emotions"} data1={user2} label1={"Child"} data2={user1} label2={"Parent"}/>
       </div>

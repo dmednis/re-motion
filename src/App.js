@@ -18,21 +18,19 @@ class App extends React.Component {
   render() {
     return (
       <Router history={history}>
-        <div className='Root'>
-          <NavBar/>
-          <div className="App">
-            {/*<div className="Sidepanz">*/}
-            {/*  <Sidebar/>*/}
-            {/*</div>*/}
+        <NavBar/>
+        <div className="App">
+          {/*<div className="Sidepanz">*/}
+          {/*  <Sidebar/>*/}
+          {/*</div>*/}
 
-            <Switch>
-              <Route exact path="/">
-                <Home/>
-              </Route>
-              <Route path="/users/:id" render={({ match }) => <EmoAnalytics pairId={match.params.id} exact/>}/>
-            </Switch>
+          <Switch>
+            <Route exact path="/">
+              <Home/>
+            </Route>
+            <Route path="/users/:id" render={({ match }) => <EmoAnalytics pairId={match.params.id} exact/>}/>
+          </Switch>
 
-          </div>
         </div>
       </Router>
     );

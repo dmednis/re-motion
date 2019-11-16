@@ -24,7 +24,7 @@ export const recognizeProblem = (parentData, childData) => {
   // First problem if child for last 2 weeks constantly has feeled same emotion
   Object.entries(childData).forEach(([emotion, dayData]) => {
     const emotionData = [...dayData].reverse().slice(0, 14);
-    const isConstant = emotionData.reduce((_, current) => !!current, true);
+    const isConstant = emotionData.reduce((acc, current) => acc && current > 0, true);
 
     if (isConstant) {
       verdict.hasProblem = true;

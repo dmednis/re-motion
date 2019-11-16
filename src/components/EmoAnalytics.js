@@ -8,6 +8,7 @@ import emotions from '../emotions';
 import mock from '../data.js'
 import './EmoAnalytics.scss'
 import { Icon } from "@blueprintjs/core";
+import { recognizeProblem } from '../recognizeProblem';
 
 class EmoAnalytics extends React.Component {
 
@@ -90,12 +91,28 @@ class EmoAnalytics extends React.Component {
 
   render() {
     const { user1, user2 } = this.state;
+    let verdictHTML;
+
+    if (user1 && user2) {
+      const verdict = recognizeProblem(user1.other, user2.self);
+      if (verdict.hasProblem) {
+        verdictHTML = verdict.msg.map(el => <div>{el}</div>)
+      }
+    }
 
     return (
       <div className="EmoAnalytics">
         <Icon className="backIcon" icon="chevron-left" onClick={()=> {history.goBack()}}/>
         <Plot title={"Child emotions"} data1={user1} label1={"Parent"} data2={user2} label2={"Child"}/>
         <Plot title={"Parent emotions"} data1={user2} label1={"Child"} data2={user1} label2={"Parent"}/>
+
+        {
+          verdictHTML
+          ? <div className="verdict-msg">
+            {verdictHTML}
+          </div>
+          : <></>
+        }
       </div>
     )
   }

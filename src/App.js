@@ -17,13 +17,9 @@ class App extends React.Component {
   // {/*<div className='Root'>*/}
   render() {
     return (
-      <Router history={history}>
+      <Router history={history} basename="/re-motion">
         <NavBar/>
         <div className="App">
-          {/*<div className="Sidepanz">*/}
-          {/*  <Sidebar/>*/}
-          {/*</div>*/}
-
           <Switch>
             <Route exact path="/">
               <Home/>

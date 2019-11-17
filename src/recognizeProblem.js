@@ -24,7 +24,7 @@ export const recognizeProblem = (parentData, childData) => {
 
   // First problem if child for last 2 weeks constantly has feeled same emotion
   Object.entries(childData).forEach(([emotion, dayData]) => {
-    const emotionData = [...dayData].reverse().slice(0, 14);
+    const emotionData = [...dayData].reverse().slice(0, 7);
     const isConstant = emotionData.reduce((acc, current) => acc && current > 0, true);
 
     if (isConstant) {
@@ -33,7 +33,7 @@ export const recognizeProblem = (parentData, childData) => {
         verdict.type.push('constant');
       }
 
-      verdict.msg.push(`For last two weeks child has ${emotion} emotion`);
+      verdict.msg.push(`For last week child has ${emotion} emotion`);
     }
   })
 

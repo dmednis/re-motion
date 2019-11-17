@@ -10,7 +10,7 @@ const data = [
 const Home = () => {
   return (
     <div className="Home">
-      {data.map(d => (<Link className="Home__button" to={`/users/${d.id}`}>Therapy: {d.name} - {d.id}</Link>))}
+      {data.map(d => (<Link key={d.id} className="Home__button" to={`/users/${d.id}`}>Therapy: {d.name} - {d.id}</Link>))}
     </div>
   );
 };

@@ -1,8 +1,9 @@
 import React from 'react';
 import * as firebase from 'firebase/app';
 import 'firebase/firestore';
+import { Spinner } from '@blueprintjs/core'
 
-import {history} from "../App";
+import { history } from "../App";
 import Plot from "./Plot";
 import emotions from '../emotions';
 import mock from '../data.js'
@@ -24,6 +25,7 @@ class EmoAnalytics extends React.Component {
         self: this.emptyData(),
         other: this.emptyData(),
       },
+      loaded: false
     }
   }
 
@@ -60,21 +62,23 @@ class EmoAnalytics extends React.Component {
         user.self[key].push(this.elemCount(key, self));
         user.other[key].push(this.elemCount(key, other))
       })
-    })
+    });
 
+    return user;
   }
 
   async fetchAndTransformData(pairID) {
-    // const [data1, data2] = await this.fetchData(pairID)
-    // const user1 = this.transformData(data1);
-    // const user2 = this.transformData(data2);
+    const [data1, data2] = await this.fetchData(pairID);
+    const user1 = this.transformData(data1);
+    const user2 = this.transformData(data2);
 
-    const [user1, user2] = mock;
+    // const [user1, user2] = mock;
 
     this.setState({
       ...this.state,
       user1,
       user2,
+      loaded: true
     })
   }
 
@@ -100,21 +104,32 @@ class EmoAnalytics extends React.Component {
       }
     }
 
-    return (
-      <div className="EmoAnalytics">
-        <Icon className="backIcon" icon="chevron-left" onClick={()=> {history.goBack()}}/>
-        <Plot title={"Child emotions"} data1={user1} label1={"Parent"} data2={user2} label2={"Child"}/>
-        <Plot title={"Parent emotions"} data1={user2} label1={"Child"} data2={user1} label2={"Parent"}/>
+    if (this.state.loaded) {
+      return (
+        <div className="EmoAnalytics">
+          <Icon className="backIcon" icon="chevron-left" onClick={() => {
+            history.goBack()
+          }}/>
+          <Plot title={"Child emotions"} data1={user2} label1={"Parent"} data2={user1} label2={"Child"}/>
+          <Plot title={"Parent emotions"} data1={user1} label1={"Child"} data2={user2} label2={"Parent"}/>
 
-        {
-          verdictHTML
-          ? <div className="verdict-msg">
-            {verdictHTML}
-          </div>
-          : <></>
-        }
-      </div>
-    )
+          {
+            verdictHTML
+              ? <div className="verdict-msg">
+                {verdictHTML}
+              </div>
+              : <></>
+          }
+        </div>
+      )
+    } else {
+      return (
+        <div className="EmoAnalytics">
+          <Spinner size={100}/>
+        </div>
+      );
+    }
+
   }
 }
 

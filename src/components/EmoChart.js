@@ -27,7 +27,6 @@ const baseSettings = {
 };
 
 function EmoChart({ data1, keys1, data2, keys2 }) {
-  console.log(data1, data2)
   const datasets = (user1, keys1, user2, keys2) => {
     return [...Object.keys(user1.self).map(key => {
       return {

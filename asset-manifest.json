@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/re-motion/static/css/main.64c352c8.chunk.css",
+    "main.js": "/re-motion/static/js/main.a675862a.chunk.js",
+    "main.js.map": "/re-motion/static/js/main.a675862a.chunk.js.map",
+    "runtime-main.js": "/re-motion/static/js/runtime-main.2b636319.js",
+    "runtime-main.js.map": "/re-motion/static/js/runtime-main.2b636319.js.map",
+    "static/css/2.b96c6e41.chunk.css": "/re-motion/static/css/2.b96c6e41.chunk.css",
+    "static/js/2.6bdc5718.chunk.js": "/re-motion/static/js/2.6bdc5718.chunk.js",
+    "static/js/2.6bdc5718.chunk.js.map": "/re-motion/static/js/2.6bdc5718.chunk.js.map",
+    "index.html": "/re-motion/index.html",
+    "precache-manifest.bf5b883c36299a2dcce68b3dc4478181.js": "/re-motion/precache-manifest.bf5b883c36299a2dcce68b3dc4478181.js",
+    "service-worker.js": "/re-motion/service-worker.js",
+    "static/css/2.b96c6e41.chunk.css.map": "/re-motion/static/css/2.b96c6e41.chunk.css.map",
+    "static/css/main.64c352c8.chunk.css.map": "/re-motion/static/css/main.64c352c8.chunk.css.map",
+    "static/media/remotion-small.png": "/re-motion/static/media/remotion-small.a9de0ae9.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2b636319.js",
+    "static/css/2.b96c6e41.chunk.css",
+    "static/js/2.6bdc5718.chunk.js",
+    "static/css/main.64c352c8.chunk.css",
+    "static/js/main.a675862a.chunk.js"
+  ]
+}

@@ -12,7 +12,7 @@ const NavBar = () => {
       <Link to="/">
         <div className="NavBar__logo">
           <img src={smallLogo} style={{ width: '30px' }}/>
-          <img src={textLogo} style={{ width: '120px', height: '20px' }}/>
+          <img src={textLogo} style={{ width: '120px', height: '20px', paddingLeft: '10px' }}/>
         </div>
       </Link>
     </div>

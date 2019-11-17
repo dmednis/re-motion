@@ -1,21 +1,19 @@
-.userPairs {
+.Home {
   display: flex;
-  justify-content: space-evenly;
-  flex-flow: wrap;
-  margin: 30px;
+  align-items: flex-start;
+  padding: 20px;
 
-  a {
+  &__button {
     background-color: #4ECDC4;
-    margin: 10px;
-    border-radius: 20px;
+    padding: 15px;
+    margin-right: 10px;
+    border-radius: 10px;
+    display: block;
+    color: white;
 
     &:hover {
+      color: white;
       text-decoration: none;
-    }
-
-    li {
-      border-radius: 20px;
-      list-style: none;
     }
   }
 }
